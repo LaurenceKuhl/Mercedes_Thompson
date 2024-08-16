@@ -71,12 +71,6 @@ class City:
         
 
 
-
-
-
-
-
-
 # @click.command()
 # @click.option('-p', '--p', help='Specify which character to create')
 

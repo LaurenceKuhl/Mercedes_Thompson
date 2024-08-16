@@ -15,3 +15,10 @@ Mercedes Thompson is a mechanic who lives in the Tri State area. She also happen
 - pre-commit
 - the __init__ function
 - dictionaries
+
+## New notions
+
+pre-commit
+What does pre-commit do ? pre-commit aims to improve the qualities of your commits.
+
+Trigger a GitHub action for CI
