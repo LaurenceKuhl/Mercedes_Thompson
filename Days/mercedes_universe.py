@@ -8,7 +8,6 @@ Description: day 1 of my new coding habit
 
 import datetime
 
-
 class Creature:
     """Creates a Creature which could be a human, werewolf or shapeshifter"""
 
@@ -24,6 +23,12 @@ class Creature:
     def speaks(self, lines: str) -> None:
         """function that prints the name of the character and the lines they say"""
         return print(f"{self.name} says '{lines}'")
+
+    @property
+    def age(self) -> int:
+        """returns the age of the creature"""
+        today = datetime.date.today()
+        return today.year - self.birthday.year
 
 
 class Shapeshifter(Creature):
@@ -99,9 +104,6 @@ class City:  # pylint: disable=too-few-public-methods
         pass
 
 
-# @click.command()
-# @click.option('-p', '--p', help='Specify which character to create')
-
 if __name__ == "__main__":
     mercy = Creature("Mercy", "F", datetime.datetime(1989, 6, 1))
     mercy.speaks("Hey everyone")
@@ -110,4 +112,6 @@ if __name__ == "__main__":
         "Adam", "male", datetime.datetime(1989, 2, 12), "Black", True, "Tri-cities"
     )
     adam.speaks("Hi")
+    print(adam.age)
+    print(mercy.age)
     print(adam.rare())
