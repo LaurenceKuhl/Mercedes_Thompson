@@ -15,6 +15,9 @@ Mercedes Thompson is a mechanic who lives in the Tri State area. She also happen
 - pre-commit
 - the **init** function
 - dictionaries
+- property functions (defining a setting the user can't modify)
+- pre-commit
+- linting
 
 ## New notions
 
