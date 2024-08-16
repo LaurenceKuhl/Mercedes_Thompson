@@ -22,3 +22,11 @@ pre-commit
 What does pre-commit do ? pre-commit aims to improve the qualities of your commits.
 
 Trigger a GitHub action for CI
+I added a Github action to automatically lint my python code. I will try to add a github action to see if pre-commit has been run as well.
+
+
+## Days
+
+Here i keep track of my days just to hold myself accountable!
+
+day 3 : Added a linting github action and fixed all linting issues (most notably adding definition strings)
