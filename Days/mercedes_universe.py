@@ -36,11 +36,18 @@ class Creature:
         today = datetime.date.today()
         return today.year - self.birthday.year
 
+    def city(self) -> str:
+        """returns the city the creature lives in"""
+        if self.city:
+            return self.city.name
+        else:
+            return None
+
 
 class Shapeshifter(Creature):
     """Creates a Shapeshifter which turns into a specific animal"""
 
-    def __init__(self, name, gender, birthday, animal) -> None:
+    def __init__(self, name, gender, birthday, animal, city: City = None) -> None:
         super().__init__(name, gender, birthday)
         self.animal = animal
         self.human_shape = True
@@ -63,7 +70,7 @@ class Werewolf(Creature):
     """Creates a Werewolf which is either dominant or submissive and has a fur color"""
 
     def __init__(  # pylint: disable=too-many-arguments
-        self, name, gender, birthday: datetime, fur_color, dominance: bool, pack
+        self, name, gender, birthday: datetime, fur_color = None, dominance: bool = False, pack = None, city: City = None
     ):
         super().__init__(name, gender, birthday)
         self.fur_color = fur_color
@@ -98,9 +105,13 @@ class Werewolf(Creature):
 class City:
     """Defines a city of inhabitants, all of whom are Creatures"""
 
-    def __init__(self, name: str):
-        self.name = name
+    def __init__(self, name_city: str):
+        self.name_city = name_city
         self.creatures: List[Creature] = []  # Use forward reference with List[Creature]
+    
+    @property
+    def name(self):
+        return self.name_city
 
     def add_inhabitant(self, creature: Creature):
         """Adds an inhabitant to the city"""
@@ -127,10 +138,14 @@ if __name__ == "__main__":
     mercy = Creature("Mercy", "F", datetime.datetime(1989, 6, 1))
     mercy.speaks("Hey everyone")
     print(repr(mercy))
+    atlanta = City('Atlanta')
     adam = Werewolf(
-        "Adam", "male", datetime.datetime(1989, 2, 12), "Black", True, "Tri-cities"
+        "Adam", "male", datetime.datetime(1989, 2, 12), "Black", True, atlanta
     )
     adam.speaks("Hi")
     print(adam.age)
     print(mercy.age)
     print(adam.rare())
+    atlanta.add_inhabitant(adam)
+    print(adam.city)
+
