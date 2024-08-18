@@ -36,6 +36,7 @@ class Creature:
         today = datetime.date.today()
         return today.year - self.birthday.year
 
+
 class Shapeshifter(Creature):
     """Creates a Shapeshifter which turns into a specific animal"""
 

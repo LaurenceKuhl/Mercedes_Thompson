@@ -18,7 +18,7 @@ Mercedes Thompson is a mechanic who lives in the Tri State area. She also happen
 - property functions (defining a setting the user can't modify)
 - pre-commit
 - linting
-- pytest : pytest is designed to automatically discover and run tests based on a few conventions. By default, pytest looks for files that match the pattern test_*.py or *_test.py. Within the test files, pytest looks for functions that start with test_. For example, test_correctness_of_attributes_ is a valid test function name.
+- pytest : pytest is designed to automatically discover and run tests based on a few conventions. By default, pytest looks for files that match the pattern test\*_.py or _\_test.py. Within the test files, pytest looks for functions that start with test*. For example, test*correctness_of_attributes\* is a valid test function name.
 
 ## New notions
 
@@ -32,6 +32,7 @@ I added a Github action to automatically lint my python code. I will try to add 
 
 Here i keep track of my days just to hold myself accountable!
 
-- day 3 : Added a linting github action and fixed all linting issues (most notably adding * definition strings)
+- day 3 : Added a linting github action and fixed all linting issues (most notably adding \* definition strings)
 - day 4 : Played around with the City class. City contain creatures. A city has a move event, add inhabitant when they move in. A creature can belong to a city so it also has an attribute in its own class.
 - day 5 cleaned my code a bit and will look into adding unit tests
+- day 6 (18/08) started adding pytests!
