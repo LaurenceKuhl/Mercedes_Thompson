@@ -13,7 +13,8 @@ Mercedes Thompson is a mechanic who lives in the Tri State area. She also happen
 - classes
 - classes inheritances
 - pre-commit
-- the **init** function
+- the **init**, repr functions
+- properties and static functions
 - dictionaries
 - property functions (defining a setting the user can't modify)
 - pre-commit
