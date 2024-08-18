@@ -101,7 +101,6 @@ class Werewolf(Creature):
         }
         return fur[self.fur_color]
 
-
 class City:
     """Defines a city of inhabitants, all of whom are Creatures"""
 
@@ -125,14 +124,13 @@ class City:
 
     def survey_population(self) -> List[str]:
         """Shows a list of different inhabitants of the city"""
-        return [f"{creature.name} ({creature.species})" for creature in self.creatures]
+        return [f"{creature.name}" for creature in self.creatures]
 
     @property
     def population_size(self) -> int:
         """returns the size of the population"""
         print(len(self.creatures))
         return len(self.creatures)
-
 
 if __name__ == "__main__":
     mercy = Creature("Mercy", "F", datetime.datetime(1989, 6, 1))
@@ -147,5 +145,6 @@ if __name__ == "__main__":
     print(mercy.age)
     print(adam.rare())
     atlanta.add_inhabitant(adam)
-    print(adam.city)
+    print(adam.city.name)
+    print(atlanta.survey_population())
 

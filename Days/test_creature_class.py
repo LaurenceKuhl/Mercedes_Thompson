@@ -6,7 +6,6 @@ Github: https://github.com/laurencekuhl
 Description: assertions to check for the Creature class
 """
 import datetime
-
 import pytest
 from mercedes_universe import Creature
 
@@ -15,7 +14,6 @@ from mercedes_universe import Creature
 def mercy_fixture():
     """Create the character Mercy for testing purposes"""
     return Creature("Mercy", gender="F", birthday=datetime.datetime(1989, 6, 1))
-
 
 def test_correctness_of_attributes_(mercy_fixture):
     """Checks the creature function"""
