@@ -31,4 +31,6 @@ I added a Github action to automatically lint my python code. I will try to add 
 
 Here i keep track of my days just to hold myself accountable!
 
-day 3 : Added a linting github action and fixed all linting issues (most notably adding definition strings)
+- day 3 : Added a linting github action and fixed all linting issues (most notably adding * definition strings)
+- day 4 : Played around with the City class. City contain creatures. A city has a move event, add inhabitant when they move in. A creature can belong to a city so it also has an attribute in its own class.
+- day 5 cleaned my code a bit and will look into adding unit tests
