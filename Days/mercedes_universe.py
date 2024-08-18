@@ -6,6 +6,7 @@ Github: https://github.com/laurencekuhl
 Description: day 1 of my new coding habit
 """
 from __future__ import annotations
+
 import datetime
 from typing import List, Optional
 
@@ -13,7 +14,9 @@ from typing import List, Optional
 class Creature:
     """Creates a Creature which could be a human, werewolf or shapeshifter"""
 
-    def __init__(self, name: str, gender: str, birthday: datetime.date, city: City = None) -> None:
+    def __init__(
+        self, name: str, gender: str, birthday: datetime.date, city: City = None
+    ) -> None:
         self.name = name
         self.gender = gender
         self.birthday = birthday
@@ -90,8 +93,11 @@ class Werewolf(Creature):
             "Mahogany": False,
         }
         return fur[self.fur_color]
+
+
 class City:
     """Defines a city of inhabitants, all of whom are Creatures"""
+
     def __init__(self, name: str):
         self.name = name
         self.creatures: List[Creature] = []  # Use forward reference with List[Creature]
@@ -115,6 +121,7 @@ class City:
         """returns the size of the population"""
         print(len(self.creatures))
         return len(self.creatures)
+
 
 if __name__ == "__main__":
     mercy = Creature("Mercy", "F", datetime.datetime(1989, 6, 1))
