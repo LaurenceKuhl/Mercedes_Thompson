@@ -18,6 +18,7 @@ Mercedes Thompson is a mechanic who lives in the Tri State area. She also happen
 - property functions (defining a setting the user can't modify)
 - pre-commit
 - linting
+- pytest : pytest is designed to automatically discover and run tests based on a few conventions. By default, pytest looks for files that match the pattern test_*.py or *_test.py. Within the test files, pytest looks for functions that start with test_. For example, test_correctness_of_attributes_ is a valid test function name.
 
 ## New notions
 
