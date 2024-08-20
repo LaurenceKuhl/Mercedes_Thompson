@@ -9,7 +9,9 @@ from __future__ import annotations
 
 import datetime
 from typing import List, Optional
+from collections import namedtuple
 
+Pet = namedtuple('Pet', ['name', 'specie'])
 
 class Creature:
     """Creates a Creature which could be a human, werewolf or shapeshifter"""
@@ -43,14 +45,14 @@ class Creature:
         else:
             return None
 
-
 class Shapeshifter(Creature):
     """Creates a Shapeshifter which turns into a specific animal"""
 
-    def __init__(self, name, gender, birthday, animal, city: City = None) -> None:
+    def __init__(self, name, gender, birthday, animal, city: City = None, pet: Pet = None) -> None:
         super().__init__(name, gender, birthday)
         self.animal = animal
         self.human_shape = True
+        self.pet = pet
 
     def __repr__(self):
         """returns the attributes of the shapeshifter"""
@@ -64,7 +66,10 @@ class Shapeshifter(Creature):
         else:
             self.human_shape = True
             print(f"{self.name} swiftly turns back into a human!")
-
+    
+    def adopt_pet(self, pet: Pet) -> None:
+        """Adopts a pet"""
+        self.pet = pet
 
 class Werewolf(Creature):
     """Creates a Werewolf which is either dominant or submissive and has a fur color"""
@@ -104,10 +109,10 @@ class Werewolf(Creature):
 class City:
     """Defines a city of inhabitants, all of whom are Creatures"""
 
-    def __init__(self, name_city: str):
+    def __init__(self, name_city: str, position: Position = None) -> None:
         self.name_city = name_city
         self.creatures: List[Creature] = []  # Use forward reference with List[Creature]
-    
+
     @property
     def name(self):
         return self.name_city
@@ -133,8 +138,9 @@ class City:
         return len(self.creatures)
 
 if __name__ == "__main__":
-    mercy = Creature("Mercy", "F", datetime.datetime(1989, 6, 1))
+    mercy = Shapeshifter("Mercy", "F", datetime.datetime(1989, 6, 1), animal = 'coyote',pet = Pet(name="Meredith", specie="cat"))
     mercy.speaks("Hey everyone")
+    print(mercy.city)
     print(repr(mercy))
     atlanta = City('Atlanta')
     adam = Werewolf(
@@ -146,5 +152,8 @@ if __name__ == "__main__":
     print(adam.rare())
     atlanta.add_inhabitant(adam)
     print(adam.city.name)
-    print(atlanta.survey_population())
+    oliver = Shapeshifter("Oliver", "M", datetime.datetime(1995, 9, 15), "owl")
+    oliver.shapeshift()
+    atlanta.add_inhabitant(oliver)
+    print(atlanta.population_size)
 
