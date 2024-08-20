@@ -8,13 +8,15 @@ Description: day 1 of my new coding habit
 from __future__ import annotations
 
 import datetime
-from typing import List, Optional
 from collections import namedtuple
 
-Pet = namedtuple('Pet', ['name', 'specie'])
+import click
+
+Pet = namedtuple("Pet", ["name", "specie"])
+
 
 class Creature:
-    """Creates a Creature which could be a human, werewolf or shapeshifter"""
+    """Creates a creature with a name"""
 
     def __init__(
         self, name: str, gender: str, birthday: datetime.date, city: City = None
@@ -38,17 +40,18 @@ class Creature:
         today = datetime.date.today()
         return today.year - self.birthday.year
 
-    def city(self) -> str:
+    def get_city_name(self) -> str:
         """returns the city the creature lives in"""
         if self.city:
             return self.city.name
-        else:
-            return None
+
 
 class Shapeshifter(Creature):
     """Creates a Shapeshifter which turns into a specific animal"""
 
-    def __init__(self, name, gender, birthday, animal, city: City = None, pet: Pet = None) -> None:
+    def __init__(
+        self, name, gender, birthday, animal, city: City = None, pet: Pet = None
+    ) -> None:  # pylint: disable=too-many-arguments
         super().__init__(name, gender, birthday)
         self.animal = animal
         self.human_shape = True
@@ -66,16 +69,24 @@ class Shapeshifter(Creature):
         else:
             self.human_shape = True
             print(f"{self.name} swiftly turns back into a human!")
-    
+
     def adopt_pet(self, pet: Pet) -> None:
         """Adopts a pet"""
         self.pet = pet
+
 
 class Werewolf(Creature):
     """Creates a Werewolf which is either dominant or submissive and has a fur color"""
 
     def __init__(  # pylint: disable=too-many-arguments
-        self, name, gender, birthday: datetime, fur_color = None, dominance: bool = False, pack = None, city: City = None
+        self,
+        name,
+        gender,
+        birthday: datetime,
+        fur_color=None,
+        dominance: bool = False,
+        pack=None,
+        city: City = None,
     ):
         super().__init__(name, gender, birthday)
         self.fur_color = fur_color
@@ -106,15 +117,17 @@ class Werewolf(Creature):
         }
         return fur[self.fur_color]
 
+
 class City:
     """Defines a city of inhabitants, all of whom are Creatures"""
 
-    def __init__(self, name_city: str, position: Position = None) -> None:
+    def __init__(self, name_city: str) -> None:
         self.name_city = name_city
         self.creatures: List[Creature] = []  # Use forward reference with List[Creature]
 
     @property
     def name(self):
+        """returns the name of the city"""
         return self.name_city
 
     def add_inhabitant(self, creature: Creature):
@@ -137,8 +150,82 @@ class City:
         print(len(self.creatures))
         return len(self.creatures)
 
+
+@click.group()
+def cli():
+    pass
+
+
+@cli.group()
+def create():
+    """Create various entities in the Mercedes Universe."""
+
+
+@create.command()
+@click.option("--name", prompt="Name of the creature", help="The name of the creature.")
+@click.option(
+    "--gender", prompt="Gender of the creature", help="The gender of the creature."
+)
+@click.option(
+    "--birthday",
+    prompt="Birthday of the creature (YYYY-MM-DD)",
+    help="The birthday of the creature.",
+)
+def creature(name: str, gender: str, birthday: str):
+    """Create a new creature."""
+    birthday = datetime.datetime.strptime(birthday, "%Y-%m-%d").date()
+    new_creature = Creature(name, gender, birthday)
+    click.echo(f"Creature created: {new_creature}")
+
+
+@create.command()
+@click.option("--name", prompt="Name of the werewolf", help="The name of the werewolf.")
+@click.option(
+    "--gender", prompt="Gender of the werewolf", help="The gender of the werewolf."
+)
+@click.option(
+    "--birthday",
+    prompt="Birthday of the werewolf (YYYY-MM-DD)",
+    help="The birthday of the werewolf.",
+)
+@click.option(
+    "--fur-color",
+    prompt="Fur color of the werewolf",
+    help="The fur color of the werewolf.",
+)
+@click.option(
+    "--dominance",
+    prompt="Dominance of the werewolf (True/False)",
+    help="The dominance of the werewolf.",
+)
+@click.option("--pack", prompt="Pack of the werewolf", help="The pack of the werewolf.")
+@click.option("--city", prompt="City of the werewolf", help="The city of the werewolf.")
+def werewolf( # pylint: disable=too-many-arguments
+    name: str,
+    gender: str,
+    birthday: str,
+    fur_color: str,
+    dominance: str,
+    pack: str,
+    city: str,
+):
+    """Create a new werewolf."""
+    birthday = datetime.datetime.strptime(birthday, "%Y-%m-%d").date()
+    dominance = dominance.lower() == "true"
+    city_obj = City(city)
+    new_werewolf = Werewolf(
+        name, gender, birthday, fur_color, dominance, pack, city_obj
+    )
+    city_obj.add_inhabitant(new_werewolf)
+    click.echo(f"Werewolf created: {new_werewolf}")
+
+
 if __name__ == "__main__":
-    mercy = Shapeshifter("Mercy", "F", datetime.datetime(1989, 6, 1), animal = 'coyote',pet = Pet(name="Meredith", specie="cat"))
+    cli()
+
+    # if __name__ == "__main__":
+    #   cli()
+    """ mercy = Shapeshifter("Mercy", "F", datetime.datetime(1989, 6, 1), animal = 'coyote',pet = Pet(name="Meredith", specie="cat"))
     mercy.speaks("Hey everyone")
     print(mercy.city)
     print(repr(mercy))
@@ -155,5 +242,4 @@ if __name__ == "__main__":
     oliver = Shapeshifter("Oliver", "M", datetime.datetime(1995, 9, 15), "owl")
     oliver.shapeshift()
     atlanta.add_inhabitant(oliver)
-    print(atlanta.population_size)
-
+    print(atlanta.population_size)"""

@@ -36,4 +36,6 @@ Here i keep track of my days just to hold myself accountable!
 - day 3 : Added a linting github action and fixed all linting issues (most notably adding \* definition strings)
 - day 4 : Played around with the City class. City contain creatures. A city has a move event, add inhabitant when they move in. A creature can belong to a city so it also has an attribute in its own class.
 - day 5 cleaned my code a bit and will look into adding unit tests
-- day 6 (18/08) started adding pytests!
+- day 6 (18/08) started adding pytests and added a Docker container
+- Day 7 added the pytest in the github CI, added a pet which is a NamedTuple for shapeshifters
+- Day 8 : added click functions to create characters from the terminal :)
