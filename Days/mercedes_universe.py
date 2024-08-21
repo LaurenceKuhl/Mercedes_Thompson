@@ -117,7 +117,6 @@ class Werewolf(Creature):
         }
         return fur[self.fur_color]
 
-
 class City:
     """Defines a city of inhabitants, all of whom are Creatures"""
 
@@ -209,6 +208,7 @@ def werewolf( # pylint: disable=too-many-arguments
     pack: str,
     city: str,
 ):
+    
     """Create a new werewolf."""
     birthday = datetime.datetime.strptime(birthday, "%Y-%m-%d").date()
     dominance = dominance.lower() == "true"

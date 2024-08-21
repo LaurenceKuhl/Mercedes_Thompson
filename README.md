@@ -39,3 +39,4 @@ Here i keep track of my days just to hold myself accountable!
 - day 6 (18/08) started adding pytests and added a Docker container
 - Day 7 added the pytest in the github CI, added a pet which is a NamedTuple for shapeshifters
 - Day 8 : added click functions to create characters from the terminal :)
+- Day 9 : added the test werewolf
