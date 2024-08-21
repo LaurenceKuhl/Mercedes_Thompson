@@ -117,6 +117,7 @@ class Werewolf(Creature):
         }
         return fur[self.fur_color]
 
+
 class City:
     """Defines a city of inhabitants, all of whom are Creatures"""
 
@@ -152,6 +153,7 @@ class City:
 
 @click.group()
 def cli():
+    """Mercedes Universe CLI."""
     pass
 
 
@@ -199,7 +201,7 @@ def creature(name: str, gender: str, birthday: str):
 )
 @click.option("--pack", prompt="Pack of the werewolf", help="The pack of the werewolf.")
 @click.option("--city", prompt="City of the werewolf", help="The city of the werewolf.")
-def werewolf( # pylint: disable=too-many-arguments
+def werewolf(  # pylint: disable=too-many-arguments
     name: str,
     gender: str,
     birthday: str,
@@ -208,7 +210,6 @@ def werewolf( # pylint: disable=too-many-arguments
     pack: str,
     city: str,
 ):
-    
     """Create a new werewolf."""
     birthday = datetime.datetime.strptime(birthday, "%Y-%m-%d").date()
     dominance = dominance.lower() == "true"
@@ -223,8 +224,6 @@ def werewolf( # pylint: disable=too-many-arguments
 if __name__ == "__main__":
     cli()
 
-    # if __name__ == "__main__":
-    #   cli()
     """ mercy = Shapeshifter("Mercy", "F", datetime.datetime(1989, 6, 1), animal = 'coyote',pet = Pet(name="Meredith", specie="cat"))
     mercy.speaks("Hey everyone")
     print(mercy.city)
