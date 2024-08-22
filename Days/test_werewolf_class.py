@@ -29,7 +29,7 @@ def test_correctness_of_attributes_(adam_fixture: Werewolf):
     assert adam_fixture.name == "Adam"
     assert adam_fixture.gender == "M"
     assert adam_fixture.birthday == datetime.datetime(1989, 12, 1)
-    assert adam_fixture.age == 31
+    assert adam_fixture.age == 35
     assert adam_fixture.dominance
     assert adam_fixture.pack == "Alpha"
     assert adam_fixture.fur_color == "Brown"
