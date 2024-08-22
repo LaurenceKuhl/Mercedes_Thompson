@@ -8,13 +8,13 @@ Description: assertions to check for the Werewolf class
 import datetime
 
 import pytest
-from mercedes_universe import Creature
+from mercedes_universe import Werewolf
 
 
 @pytest.fixture
 def adam_fixture():
     """Create the character Adam for testing purposes"""
-    return Creature(
+    return Werewolf(
         "Adam",
         gender="M",
         birthday=datetime.datetime(1989, 12, 1),
@@ -24,7 +24,7 @@ def adam_fixture():
     )
 
 
-def test_correctness_of_attributes_(adam_fixture: Creature):
+def test_correctness_of_attributes_(adam_fixture: Werewolf):
     """Checks the werewolf function"""
     assert adam_fixture.name == "Adam"
     assert adam_fixture.gender == "M"
