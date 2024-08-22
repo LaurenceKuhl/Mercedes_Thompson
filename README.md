@@ -40,3 +40,4 @@ Here i keep track of my days just to hold myself accountable!
 - Day 7 added the pytest in the github CI, added a pet which is a NamedTuple for shapeshifters
 - Day 8 : added click functions to create characters from the terminal :)
 - Day 9 : added the test werewolf
+- Day 10 : fixed the linting, added the cli function in another script, fixed the Werewolf pytest
