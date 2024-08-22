@@ -35,6 +35,6 @@ def test_correctness_of_attributes_(adam_fixture: Werewolf):
     assert adam_fixture.fur_color == "Brown"
 
 
-def test_rare(adam_fixture: Creature):
+def test_rare(adam_fixture: Werewolf):
     """Checks the rare function"""
     assert not adam_fixture.rare()
