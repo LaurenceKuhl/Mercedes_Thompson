@@ -10,9 +10,9 @@ from __future__ import annotations
 import datetime
 from collections import namedtuple
 from typing import List
+import pathlib
 
 Pet = namedtuple("Pet", ["name", "specie"])
-
 
 class Creature:
     """Creates a creature with a name"""
@@ -44,7 +44,19 @@ class Creature:
         if self.city:
             return self.city.name
         return "No city"
-
+    
+    def reads_letter(self, letter, diagonally=False) -> None:
+        """Reads and prints lines from a letter (file). 
+        If diagonally=True, prints every other line."""
+    
+        file_path = pathlib.Path(letter)
+    
+        with file_path.open('r') as file:
+            for line_number, line in enumerate(file):
+                # Print every line if diagonally is False
+                # Print only every other line if diagonally is True
+                if not diagonally or line_number % 2 == 0:
+                    print(line, end='')  # Use end='' to avoid double newlines
 
 class Shapeshifter(Creature):
     """Creates a Shapeshifter which turns into a specific animal"""
@@ -150,7 +162,6 @@ class City:
         print(len(self.creatures))
         return len(self.creatures)
 
-
 if __name__ == "__main__":
     mercy = Shapeshifter("Mercy", "F", datetime.datetime(1989, 6, 1),
                         animal = 'coyote',pet = Pet(name="Meredith", specie="cat")) #line-too-long
@@ -171,3 +182,4 @@ if __name__ == "__main__":
     oliver.shapeshift()
     atlanta.add_inhabitant(oliver)
     print(atlanta.population_size)
+    mercy.reads_letter('/Users/laurencekuhlburger/Documents/Mercy/Letters/letter.txt')

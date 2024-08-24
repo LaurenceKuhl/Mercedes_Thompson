@@ -41,3 +41,4 @@ Here i keep track of my days just to hold myself accountable!
 - Day 8 : added click functions to create characters from the terminal :)
 - Day 9 : added the test werewolf
 - Day 10 : fixed the linting, added the cli function in another script, fixed the Werewolf pytest
+- Day 11 : Added the function read_letter
