@@ -35,28 +35,21 @@ I added a Github action to automatically lint my python code. I will try to add 
 
 Here i keep track of my days just to hold myself accountable!
 
-- day 3 : Added a linting github action and fixed all linting issues (most notably adding \* definition strings)
-- day 4 : Played around with the City class. City contain creatures. A city has a move event, add inhabitant when they move in. A creature can belong to a city so it also has an attribute in its own class.
-- day 5 cleaned my code a bit and will look into adding unit tests
-- day 6 (18/08) started adding pytests and added a Docker container
-- Day 7 added the pytest in the github CI, added a pet which is a NamedTuple for shapeshifters
-- Day 8 : added click functions to create characters from the terminal :)
-- Day 9 : added the test werewolf
-- Day 10 : fixed the linting, added the cli function in another script, fixed the Werewolf pytest
-- Day 11 : Added the function read_letter
-- Day 12 : Added a function move in Creature, updating the City attribute
+- day 3 : 
+- day 4 : 
+
+
+
 
 | Day   | Notion |
 | ------- | --- |
-| 1  | 30  |
-| 2     | 25  |
-| 3 | 35  |
-| 4 | 35  |
-| 5 | 35  |
-| 6 | 35  |
-| 7 | 35  |
-| 8 | 35  |
-| 9 | 35  |
-| 10 | 35  |
-| 11 | 35  |
+| 3 | Added a linting github action and fixed all linting issues (most notably adding \* definition strings) |
+| 4 | Played around with the City class. City contain creatures. A city has a move event, add inhabitant when they move in. A creature can belong to a city so it also has an attribute in its own class.  |
+| 5 | cleaned my code a bit and will look into adding unit tests  |
+| 6 | started adding pytests and added a Docker container |
+| 7 | added the pytest in the github CI, added a pet which is a NamedTuple for shapeshifters |
+| 8 | added click functions to create characters from the terminal :)  |
+| 9 | added the test werewolf  |
+| 10 | fixed the linting, added the cli function in another script, fixed the Werewolf pytest  |
+| 11 | Added the function read_letter |
 | 12 | Added a function move in Creature, updating the City attribute  |
