@@ -35,11 +35,6 @@ I added a Github action to automatically lint my python code. I will try to add 
 
 Here i keep track of my days just to hold myself accountable!
 
-- day 3 : 
-- day 4 : 
-
-
-
 
 | Day   | Notion |
 | ------- | --- |
