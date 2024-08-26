@@ -1,10 +1,12 @@
 # Welcome to my 100 day coding challenge !
 
-As I haven't programmed in object oriented in a while, I figured I'd challenge myself to a 100 days of minimum 20min of coding per day in Python!
+As I haven't programmed in object oriented in a while, I figured I'd challenge myself to a 100 days of a minimum 20min of coding per day in Python!
 
 What is object-oriented programming (OOP)? [Real Python](https://realpython.com/python3-object-oriented-programming/) describes it better, but it is a way of defining code and functions through specific objects. In my case, I want to recreate a fantasy world I grew up with, the Mercedes Thompson series by Patricia Briggs.
 
 ## The world of Mercedes Thompson
+
+My mom and I have been reading the Mercedes Thompson books forever (I think I was 13 when we started!). You can find all of the books here : https://www.goodreads.com/series/40932-mercy-thompson
 
 Mercedes Thompson is a mechanic who lives in the Tri State area. She also happens to be a shapeshifter who can turn into a coyote. In her reparation shop, she works with Zee, a grumpy but very powerful old fae. Her nextdoor neighbour is Adam Hauptman, the leader of the werewolf pack.
 
@@ -42,3 +44,19 @@ Here i keep track of my days just to hold myself accountable!
 - Day 9 : added the test werewolf
 - Day 10 : fixed the linting, added the cli function in another script, fixed the Werewolf pytest
 - Day 11 : Added the function read_letter
+- Day 12 : Added a function move in Creature, updating the City attribute
+
+| Day   | Notion |
+| ------- | --- |
+| 1  | 30  |
+| 2     | 25  |
+| 3 | 35  |
+| 4 | 35  |
+| 5 | 35  |
+| 6 | 35  |
+| 7 | 35  |
+| 8 | 35  |
+| 9 | 35  |
+| 10 | 35  |
+| 11 | 35  |
+| 12 | Added a function move in Creature, updating the City attribute  |

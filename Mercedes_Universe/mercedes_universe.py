@@ -45,12 +45,22 @@ class Creature:
             return self.city.name
         return "No city"
     
+    def move(self, new_city:City) -> None:
+        """Moves the creature to a new city"""
+        if new_city:
+            self.city = new_city
+            new_city.add_inhabitant(self)
+            print(f"{self.name} has moved to {new_city.name}")
+        else:
+            self.city.remove_inhabitant(self)
+
+
     def reads_letter(self, letter, diagonally=False) -> None:
         """Reads and prints lines from a letter (file). 
         If diagonally=True, prints every other line."""
-    
+
         file_path = pathlib.Path(letter)
-    
+
         with file_path.open('r') as file:
             for line_number, line in enumerate(file):
                 # Print every line if diagonally is False
@@ -169,6 +179,7 @@ if __name__ == "__main__":
     print(mercy.city)
     print(repr(mercy))
     atlanta = City('Atlanta')
+    georgia = City('Georgia')
     adam = Werewolf(
         "Adam", "male", datetime.datetime(1989, 2, 12), "Black", True, atlanta
     )
@@ -176,10 +187,12 @@ if __name__ == "__main__":
     print(adam.age)
     print(mercy.age)
     print(adam.rare())
-    atlanta.add_inhabitant(adam)
-    print(adam.city.name)
     oliver = Shapeshifter("Oliver", "M", datetime.datetime(1995, 9, 15), "owl")
     oliver.shapeshift()
     atlanta.add_inhabitant(oliver)
     print(atlanta.population_size)
-    mercy.reads_letter('/Users/laurencekuhlburger/Documents/Mercy/Letters/letter.txt')
+    #mercy.reads_letter('/Users/laurencekuhlburger/Documents/Mercy/Letters/letter.txt')
+    atlanta.add_inhabitant(adam)
+    print(adam.city.name)
+    adam.move(georgia)
+    print(adam.city.name)

@@ -16,9 +16,12 @@ def mercy_fixture():
     """Create the character Mercy for testing purposes"""
     return Creature("Mercy", gender="F", birthday=datetime.datetime(1989, 6, 1))
 
-
 def test_correctness_of_attributes_(mercy_fixture):
     """Checks the creature function"""
     assert mercy_fixture.name == "Mercy"
     assert mercy_fixture.gender == "F"
     assert mercy_fixture.birthday == datetime.datetime(1989, 6, 1)
+
+def test_read_letter_(mercy_fixture):
+    """Checks the creature function"""
+    assert mercy_fixture.reads_letter("Letters/letter.txt") == None
