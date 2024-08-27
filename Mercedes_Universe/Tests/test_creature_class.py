@@ -6,9 +6,13 @@ Github: https://github.com/laurencekuhl
 Description: assertions to check for the Creature class
 """
 import datetime
-
+import os
 import pytest
 from mercedes_universe import Creature
+
+
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+letter_path = os.path.join(project_root, 'Letters', 'letter.txt')
 
 
 @pytest.fixture
@@ -24,4 +28,4 @@ def test_correctness_of_attributes_(mercy_fixture):
 
 def test_read_letter_(mercy_fixture):
     """Checks the creature function"""
-    assert mercy_fixture.reads_letter("Letters/letter.txt") == None
+    assert mercy_fixture.reads_letter(letter_path) == None
