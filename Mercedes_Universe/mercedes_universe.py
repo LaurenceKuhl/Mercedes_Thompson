@@ -1,5 +1,5 @@
 """
-File: day_1.py
+File: mercedes_universe.py
 Author: Laurence Kuhlburger
 Email: laurence.kuhlburger@gmail.com
 Github: https://github.com/laurencekuhl
@@ -11,6 +11,8 @@ import datetime
 from collections import namedtuple
 from typing import List
 import pathlib
+from dataclasses import dataclass
+from typing import List
 
 Pet = namedtuple("Pet", ["name", "specie"])
 
@@ -54,7 +56,6 @@ class Creature:
         else:
             self.city.remove_inhabitant(self)
 
-
     def reads_letter(self, letter, diagonally=False) -> None:
         """Reads and prints lines from a letter (file). 
         If diagonally=True, prints every other line."""
@@ -95,7 +96,33 @@ class Shapeshifter(Creature):
     def adopt_pet(self, pet: Pet) -> None:
         """Adopts a pet"""
         self.pet = pet
+@dataclass
+class Power:
+    """Creates a power that a Vampire can have"""
+    power_name: str
+    power_strength: int
 
+    def powerful(self) -> bool:
+        """Returns true if the power is strong and false if not"""
+        return self.power_strength > 5
+class Vampire(Creature):
+    """Creates a Vampire which is immortal and has a specific blood type"""
+
+    def __init__(self, name, gender, birthday, power: Power = None):
+        super().__init__(name, gender, birthday)
+        self.name = name
+        self.immortal = True
+        self.blood_type = "AB"
+        self.power = power
+
+    def __repr__(self):
+        return (
+            f"Vampire(\n"
+            f"    '{self.name}',\n"
+            f"    {self.gender},\n"
+            f"    {self.immortal},\n"
+            f")"
+        )
 
 class Werewolf(Creature):
     """Creates a Werewolf which is either dominant or submissive and has a fur color"""
@@ -138,7 +165,6 @@ class Werewolf(Creature):
             "Mahogany": False,
         }
         return fur[self.fur_color]
-
 
 class City:
     """Defines a city of inhabitants, all of whom are Creatures"""
@@ -191,8 +217,11 @@ if __name__ == "__main__":
     oliver.shapeshift()
     atlanta.add_inhabitant(oliver)
     print(atlanta.population_size)
-    #mercy.reads_letter('/Users/laurencekuhlburger/Documents/Mercy/Letters/letter.txt')
     atlanta.add_inhabitant(adam)
     print(adam.city.name)
     adam.move(georgia)
     print(adam.city.name)
+    marsilia = Vampire("Marsilia", "F", 
+                    datetime.datetime(1989, 6, 1), power=Power("Teleportation", 10)) 
+    print(marsilia.power.powerful())
+    print(marsilia.power)
