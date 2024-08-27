@@ -22,6 +22,7 @@ Mercedes Thompson is a mechanic who lives in the Tri State area. She also happen
 - pre-commit
 - linting
 - pytest : pytest is designed to automatically discover and run tests based on a few conventions. By default, pytest looks for files that match the pattern test\*_.py or _\_test.py. Within the test files, pytest looks for functions that start with test*. For example, test*correctness_of_attributes\* is a valid test function name.
+- data classes : A data class is a class typically containing mainly data, although there aren’t really any restrictions. It is created using the new @dataclass decorator. Here the class Power is a dataclass
 
 ## New notions
 
@@ -48,3 +49,4 @@ Here i keep track of my days just to hold myself accountable!
 | 10 | fixed the linting, added the cli function in another script, fixed the Werewolf pytest  |
 | 11 | Added the function read_letter |
 | 12 | Added a function move in Creature, updating the City attribute  |
+| 13 | Added the class Vampire accompanied with a data class Power  |
