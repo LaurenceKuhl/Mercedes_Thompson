@@ -32,6 +32,10 @@ pre-commit is a framework that automates code checks and formatting before commi
 Trigger a GitHub action for CI
 I added a Github action to automatically lint my python code. I will try to add a github action to see if pre-commit has been run as well.
 
+### data classes
+
+Data classes in Python are a concise way to create classes primarily used for storing data with minimal boilerplate code. Introduced in Python 3.7 via the @dataclass decorator, they automatically generate special methods like __init__, __repr__, and __eq__ based on class attributes. Data classes make it easy to define immutable or mutable objects with default values and type annotations. They are ideal for modeling simple data structures without needing to manually write standard methods. This leads to cleaner, more readable, and maintainable code.
+
 ## Days
 
 Here i keep track of my days just to hold myself accountable!
