@@ -1,3 +1,7 @@
+from datetime import datetime
+from classes.Creature import Creature
+from classes.City import City
+
 class Werewolf(Creature):
     """Creates a Werewolf which is either dominant or submissive and has a fur color"""
 

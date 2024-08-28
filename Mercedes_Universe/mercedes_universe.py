@@ -24,6 +24,7 @@ from classes.Power import Power
 
 
 if __name__ == "__main__":
+    Pet = namedtuple("Pet", ["name", "specie"])
     mercy = Shapeshifter("Mercy", "F", datetime.datetime(1989, 6, 1),
                         animal = 'coyote',pet = Pet(name="Meredith", specie="cat")) #line-too-long
     mercy.speaks("Hey everyone")

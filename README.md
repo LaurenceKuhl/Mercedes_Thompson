@@ -36,6 +36,10 @@ I added a Github action to automatically lint my python code. I will try to add 
 
 Data classes in Python are a concise way to create classes primarily used for storing data with minimal boilerplate code. Introduced in Python 3.7 via the @dataclass decorator, they automatically generate special methods like __init__, __repr__, and __eq__ based on class attributes. Data classes make it easy to define immutable or mutable objects with default values and type annotations. They are ideal for modeling simple data structures without needing to manually write standard methods. This leads to cleaner, more readable, and maintainable code.
 
+### Circular imports
+
+two or more modules are trying to import each other. This leads to a situation where Python is unable to resolve the dependencies because it encounters an incomplete module that is still being initialized.
+
 ## Days
 
 Here i keep track of my days just to hold myself accountable!
@@ -54,3 +58,5 @@ Here i keep track of my days just to hold myself accountable!
 | 11 | Added the function read_letter |
 | 12 | Added a function move in Creature, updating the City attribute  |
 | 13 | Added the class Vampire accompanied with a data class Power  |
+| 14 | Reshifted my code so that each class is its own script. I however encountered the issue of a circular import between City and Creature. I'd like to read more into this. two or more modules are trying to import each other. This leads to a situation where Python is unable to resolve the dependencies because it encounters an incomplete module that is still being initialized. |
+

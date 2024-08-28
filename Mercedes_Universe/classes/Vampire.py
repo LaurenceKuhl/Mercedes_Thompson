@@ -1,3 +1,6 @@
+from classes.Creature import Creature
+from classes.Power import Power
+
 class Vampire(Creature):
     """Creates a Vampire which is immortal and has a specific blood type"""
 

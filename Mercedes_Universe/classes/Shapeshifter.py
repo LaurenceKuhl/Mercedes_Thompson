@@ -1,5 +1,6 @@
 from classes.Creature import Creature
 from collections import namedtuple
+from classes.City import City
 
 Pet = namedtuple("Pet", ["name", "specie"])
 
