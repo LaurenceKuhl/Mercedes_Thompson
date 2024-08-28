@@ -29,7 +29,7 @@ Mercedes Thompson is a mechanic who lives in the Tri State area. She also happen
 ### pre-commit
 pre-commit is a framework that automates code checks and formatting before commits, ensuring consistency and quality across a project. It uses git hooks to run tools like linters, formatters, and security scanners automatically. Configured via a .pre-commit-config.yaml file, it standardizes coding practices by enforcing rules across all contributors. If any checks fail, the commit is blocked until issues are fixed. This helps catch errors early and maintain a clean, consistent codebase.
 
-Trigger a GitHub action for CI
+### Trigger a GitHub action for CI
 I added a Github action to automatically lint my python code. I will try to add a github action to see if pre-commit has been run as well.
 
 ### data classes
