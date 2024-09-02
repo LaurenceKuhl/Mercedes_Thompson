@@ -59,4 +59,5 @@ Here i keep track of my days just to hold myself accountable!
 | 12 | Added a function move in Creature, updating the City attribute  |
 | 13 | Added the class Vampire accompanied with a data class Power  |
 | 14 | Reshifted my code so that each class is its own script. I however encountered the issue of a circular import between City and Creature. I'd like to read more into this. two or more modules are trying to import each other. This leads to a situation where Python is unable to resolve the dependencies because it encounters an incomplete module that is still being initialized. |
+| 15 | Added the test Vampire and defined more functions in the class power |
 
