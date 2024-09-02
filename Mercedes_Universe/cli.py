@@ -9,6 +9,10 @@ Description: cli
 import click
 from mercedes_universe import Creature, Werewolf, City
 import datetime
+from collections import namedtuple
+
+
+
 
 @click.group()
 def cli():
@@ -79,4 +83,5 @@ def werewolf(  # pylint: disable=too-many-arguments
 
 
 if __name__ == "__main__":
+    Pet = namedtuple("Pet", ["name", "specie"])
     cli()

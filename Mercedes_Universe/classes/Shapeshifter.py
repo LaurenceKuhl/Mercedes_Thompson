@@ -2,7 +2,7 @@ from classes.Creature import Creature
 from collections import namedtuple
 from classes.City import City
 
-Pet = namedtuple("Pet", ["name", "specie"])
+
 
 class Shapeshifter(Creature):
     """Creates a Shapeshifter which turns into a specific animal"""

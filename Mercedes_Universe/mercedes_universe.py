@@ -9,14 +9,10 @@ from __future__ import annotations
 
 import datetime
 from collections import namedtuple
-from typing import List
 import pathlib
 from dataclasses import dataclass
-from typing import List
-
 #local imports
 from classes.City import City
-from classes.Creature import Creature
 from classes.Shapeshifter import Shapeshifter
 from classes.Werewolf import Werewolf
 from classes.Vampire import Vampire
@@ -47,7 +43,7 @@ if __name__ == "__main__":
     print(adam.city.name)
     adam.move(georgia)
     print(adam.city.name)
-    marsilia = Vampire("Marsilia", "F", 
+    marsilia = Vampire("Marsilia", "F",
                     datetime.datetime(1989, 6, 1), power=Power("Teleportation", 10)) 
     print(marsilia.power.powerful())
     print(marsilia.power)
