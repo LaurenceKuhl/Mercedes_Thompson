@@ -8,7 +8,8 @@ Description: assertions to check for the Werewolf class
 import datetime
 
 import pytest
-from mercedes_universe import Werewolf
+from classes.Werewolf import Werewolf
+
 
 
 @pytest.fixture

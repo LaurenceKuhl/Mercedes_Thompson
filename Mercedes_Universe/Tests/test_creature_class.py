@@ -8,7 +8,8 @@ Description: assertions to check for the Creature class
 import datetime
 import os
 import pytest
-from mercedes_universe import Creature
+from classes.Creature import Creature
+
 
 
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
