@@ -5,8 +5,10 @@ from classes.City import City
 
 
 class Shapeshifter(Creature):
-    """Creates a Shapeshifter which turns into a specific animal"""
 
+    Pet = namedtuple('Pet', ['name', 'animal_kind'])
+
+    """Creates a Shapeshifter which turns into a specific animal"""
     def __init__( # pylint: disable=too-many-arguments
         self, name, gender, birthday, animal, city: City = None, pet: Pet = None # pylint: disable=too-many-arguments
     ) -> None: # pylint: disable=too-many-arguments
